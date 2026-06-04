@@ -64,7 +64,7 @@ const Home = () => {
     try {
       if (isLogin) {
         // --- REAL LOGIN API CALL ---
-        await axios.post('/api/v1/users/login', {
+        await api.post('/api/v1/users/login', {
           email: formData.email,
           password: formData.password
         }, {
@@ -76,7 +76,7 @@ const Home = () => {
         
       } else {
         // --- REAL REGISTER API CALL ---
-        await axios.post('/api/v1/users/register', {
+        await api.post('/api/v1/users/register', {
           username: formData.username,
           email: formData.email,
           password: formData.password
