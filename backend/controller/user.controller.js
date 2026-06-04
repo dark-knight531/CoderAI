@@ -1,8 +1,8 @@
 import jwt from "jsonwebtoken";
 import { asyncHandler } from "../utils/asyncHandler.js";
-import { ApiError } from "../utils/ApiError.js";
+import { ApiError } from "../utils/apiError.js";
 import User from "../models/user.models.js";
-import { ApiResponse } from "../utils/ApiResponse.js";
+import { ApiResponse } from "../utils/apiResponse.js";
 
 // --- Self-contained helper that signs JWTs inline with fallback variables ---
 const generateAccessAndRefreshToken = async (userId) => {
