@@ -1,7 +1,7 @@
 import generateResponse from "../src/services/ai.service.js";
 import Review from "../models/review.model.js"; 
 import { asyncHandler } from "../utils/asyncHandler.js";
-import { ApiError } from "../utils/ApiError.js";
+import { ApiError } from "../utils/apiError.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 
 // --- 1. POST ROUTE: Generate Review & Save to History ---
