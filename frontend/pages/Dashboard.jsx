@@ -60,7 +60,7 @@ const Dashboard = () => {
   const fetchHistory = async () => {
     setIsLoadingHistory(true);
     try {
-      const response = await axios.get('/api/v1/ai/history', { 
+      const response = await api.get('/api/v1/ai/history', { 
         withCredentials: true 
       });
       
@@ -95,7 +95,7 @@ const Dashboard = () => {
     setAiResponse('');
 
     try {
-      const response = await axios.post('/api/v1/ai/review', 
+      const response = await api.post('/api/v1/ai/review', 
         { 
           code: codeSnippet, 
           language: language,
