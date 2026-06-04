@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import api from '../src/api/api.js';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -63,7 +64,7 @@ const Home = () => {
     try {
       if (isLogin) {
         // --- REAL LOGIN API CALL ---
-        await axios.post('http://localhost:8000/api/v1/users/login', {
+        await axios.post('/api/v1/users/login', {
           email: formData.email,
           password: formData.password
         }, {
@@ -75,7 +76,7 @@ const Home = () => {
         
       } else {
         // --- REAL REGISTER API CALL ---
-        await axios.post('http://localhost:8000/api/v1/users/register', {
+        await axios.post('/api/v1/users/register', {
           username: formData.username,
           email: formData.email,
           password: formData.password

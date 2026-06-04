@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus, vs } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import Editor from '@monaco-editor/react';
+import api from '../src/api/api.js';
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -59,7 +60,7 @@ const Dashboard = () => {
   const fetchHistory = async () => {
     setIsLoadingHistory(true);
     try {
-      const response = await axios.get('http://localhost:8000/api/v1/ai/history', { 
+      const response = await axios.get('/api/v1/ai/history', { 
         withCredentials: true 
       });
       
@@ -94,7 +95,7 @@ const Dashboard = () => {
     setAiResponse('');
 
     try {
-      const response = await axios.post('http://localhost:8000/api/v1/ai/review', 
+      const response = await axios.post('/api/v1/ai/review', 
         { 
           code: codeSnippet, 
           language: language,
